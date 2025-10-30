@@ -1,0 +1,117 @@
+<!--
+Shuzna - single-file responsive website (updated with real footwear photos)
+File: index.html (ready for GitHub Pages)
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shuzna — Stylish Winter Boots</title>
+  <meta name="description" content="Shuzna — youthful winter boots. Browse our collection. No login required." />
+  <style>
+    :root{
+      --lavender: #cbb7ff;
+      --soft-pink: #ffd6e8;
+      --accent: linear-gradient(90deg,var(--lavender),var(--soft-pink));
+      --text: #222;
+      --muted: #666;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,'Segoe UI',Roboto;color:var(--text);background:#fff;line-height:1.4}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:1200px;max-width:95%;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:8px;background:var(--lavender);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav{display:flex;gap:18px;align-items:center}
+    .nav-link{font-weight:600;color:var(--muted)}
+    .hero{margin:18px 0;border-radius:14px;overflow:hidden;position:relative}
+    .hero .hero-img{height:420px;background:#eee center/cover no-repeat}
+    .hero .overlay{position:absolute;inset:0;display:flex;align-items:center;padding:28px}
+    .hero .content{max-width:640px;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,0.35)}
+    .hero h1{font-size:34px;margin:0 0 8px}
+    .hero p{margin:0 0 16px;font-size:16px}
+    .btn{display:inline-block;padding:10px 18px;border-radius:10px;font-weight:700;background:var(--lavender);color:#111}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+    .card{border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);background:#fff;display:flex;flex-direction:column}
+    .card .thumb{height:300px;background:#f6f6f6 center/cover no-repeat}
+    .card .body{padding:14px;display:flex;flex-direction:column;gap:8px}
+    .price{font-weight:800}
+    .card-actions{margin-top:auto;display:flex;gap:8px}
+    .add{flex:1;padding:10px;border-radius:10px;border:0;background:var(--lavender);font-weight:700}
+    .details{padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:#fff}
+    .cart-mini{position:fixed;right:18px;bottom:18px;background:linear-gradient(180deg,var(--lavender),var(--soft-pink));color:#111;padding:10px 14px;border-radius:999px;box-shadow:0 8px 30px rgba(0,0,0,0.12);display:flex;gap:10px;align-items:center}
+    .about{padding:18px;border-radius:12px;background:linear-gradient(90deg,rgba(203,183,255,0.12),rgba(255,214,232,0.08));margin-bottom:28px}
+    footer{padding:18px 0;color:var(--muted);font-size:14px}
+    @media (max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero .hero-img{height:320px}.hero h1{font-size:28px}}
+    @media (max-width:600px){header{flex-direction:column;align-items:flex-start;gap:12px}.products{grid-template-columns:1fr}.hero .hero-img{height:260px}.container{padding:16px}}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">S</div>
+        <div><div style="font-weight:800">Shuzna</div><div class="muted" style="font-size:12px">Youthful winter boots</div></div>
+      </div>
+      <nav>
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#shop">Shop</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-img" style="background-image:url('https://www.switchbacktravel.com/sites/default/files/image_fields/Best%20Of%20Gear%20Articles/Women%27s/Women%27s%20Winter%20Boots/Lacing%20up%20the%20Sorel%20Joan%20of%20Arctic%20%28women%27s%20winter%20boot%29.jpg');"></div>
+      <div class="overlay">
+        <div class="content">
+          <h1>Stay Stylish This Winter</h1>
+          <p>Discover Shuzna — bold winter boots for confident women. Free browsing, no account needed.</p>
+          <a class="btn" href="#shop">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop">
+      <h2 style="margin:8px 0 12px">Shop — Women's Winter Boots</h2>
+      <div class="products" id="product-list"></div>
+    </section>
+
+    <section class="about">
+      <h3>About Shuzna</h3>
+      <p>Shuzna celebrates bold, playful, and comfy winter footwear designed for young women who love style without compromise. Crafted for city walks, snow days, and cozy gatherings.</p>
+    </section>
+
+    <footer id="contact">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center">
+        <div><strong>Contact</strong><div class="muted">Email: n.tkachuk_frhtb_12_22_b_d@knute.edu.ua</div><div class="muted">Phone: +380 96 350 81 25</div></div>
+        <div class="muted">© Shuzna — All rights reserved</div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="cart-mini" id="cart-mini" title="Cart"><div id="cart-count">0</div><div style="font-weight:700">Cart</div></div>
+
+  <script>
+    const products = [
+      {id:1,name:"Arctic Lace Boots",price:129.00,img:"https://m.media-amazon.com/images/I/61104JLgv1L._UF894,1000_QL80_.jpg"},
+      {id:2,name:"Lilac Cozy Mid",price:149.00,img:"https://pyxis.nymag.com/v1/imgs/7a2/6b4/557defd00c2d72b46800747c35cdb6bfd5-womens-winter-boot-122-final.1x.rsquare.w1400.jpg"},
+      {id:3,name:"City Trekker",price:119.00,img:"https://i.pinimg.com/736x/3e/e1/72/3ee172247ccda0b80f3756b9e9c55fa3.jpg"},
+      {id:4,name:"Puff Walker",price:139.00,img:"https://www.mammalboots.co.uk/cdn/shop/collections/womens-snow-boots-uk.jpg?v=1728288310&width=750"},
+      {id:5,name:"Shearling Step",price:159.00,img:"https://www.instyle.com/thmb/J9OC-KrpwxVr4eHKZ-7NR3Zu5Yc%3D/1500x0/filters%3Ano_upscale%28%29%3Amax_bytes%28150000%29%3Astrip_icc%28%29/GettyImages-1817250883-adc8d0d3530f4d889ba8db5ab801949d.jpg"},
+      {id:6,name:"Alpine Moon",price:179.00,img:"https://m.media-amazon.com/images/I/81y9IL-bZgL._AC_UY1000_.jpg"}
+    ];
+
+    const productList=document.getElementById('product-list');
+    const cart={items:[]};
+    function formatPrice(v){return '$'+v.toFixed(2);}
+    function renderProducts(){productList.innerHTML='';products.forEach(p=>{const el=document.createElement('div');el.className='card';el.innerHTML=`<div class="thumb" style="background-image:url('${p.img}')"></div><div class="body"><div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:700">${p.name}</div><div class="price">${formatPrice(p.price)}</div></div><div class="muted">Stylish winter boots — comfy and warm.</div><div class="card-actions"><button class="add" data-id="${p.id}">Add to cart</button><button class="details">View details</button></div></div>`;productList.appendChild(el);});document.querySelectorAll('.add').forEach(btn=>btn.addEventListener('click',()=>{const id=Number(btn.dataset.id);addToCart(id);}));document.querySelectorAll('.details').forEach((b,i)=>b.addEventListener('click',()=>{const p=products[i];alert(p.name+"\nPrice: "+formatPrice(p.price)+"\n\nDescription: Cozy winter boots perfect for city and snow.");}));}
+    function addToCart(id){const p=products.find(x=>x.id===id);cart.items.push(p);updateCartUI();document.getElementById('cart-mini').animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:350});}
+    function updateCartUI(){document.getElementById('cart-count').innerText=cart.items.length;}
+    renderProducts();
+  </script>
+</body>
+</html>
